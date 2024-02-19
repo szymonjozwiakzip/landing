@@ -24,6 +24,8 @@
   border-bottom: 1px solid #000000;
   position: sticky;
   margin-bottom: 85px;
+  z-index: 1000;
+  top: 0;
 }
 
 .name-container span {
@@ -82,6 +84,7 @@
 .about {
   display: flex;
   align-items: center;
+  flex-direction: row;
 }
 
 .profilepic {
@@ -112,9 +115,115 @@
   flex: 0 1 auto; /* Element nie będzie się rozciągał, ale będzie mógł zmieniać szerokość */
   background-color: #ffffff;
   border: 2px solid orange;
-  padding: 5px;
+  padding: 20px;
   border-radius: 10px;
   font-size: 18px;
   align-items: center;
   display: flex;
+}
+
+.about-cv {
+  flex: 0 1 auto;
+  margin: 0px 100px 0px 100px;
+  width: 300px;
+  height: 220px;
+  object-fit: cover;
+  display: flex;
+
+  align-items: center;
+}
+
+.cv-container {
+  width: 220px; /* Szerokość 200px */
+  height: 300px;
+  border: 5px solid black;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.cv-container button {
+  margin: 25px; /* Przesunięcie przycisku o 10px w dół */
+  margin-left: 55px;
+  background-color: black; /* Tło przycisku */
+  color: white; /* Kolor tekstu */
+  padding: 10px 20px; /* Wewnętrzne marginesy przycisku */
+  border: none; /* Usuwamy obramowanie */
+  border-radius: 5px; /* Zaokrąglone rogi */
+  cursor: pointer; /* Zmiana kursora po najechaniu */
+  transition: background-color 0.3s ease; /* Płynne przejście koloru tła */
+}
+
+/* Dodajemy efekt po najechaniu na przycisk */
+.cv-container button:hover {
+  background-color: #333333;
+  color: black; /* Zmiana tła po najechaniu */
+}
+
+.cv-container a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media-item {
+  margin: 20px 40px; /* Dodaj odstęp między elementami */
+}
+
+.social-media-item img {
+  width: 60px; /* Ustaw szerokość obrazków */
+  height: auto; /* Ustaw wysokość proporcjonalnie */
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.4s, filter 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.25); /* Powiększenie ikony */
+  filter: grayscale(90%); /* Wyszarzenie ikony */
+}
+
+.projects {
+  margin-top: 80px;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  align-items: center;
+  display: flex;
+}
+
+.projects-container {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap; /* Spowoduje przejście do nowej linii, gdy elementy nie zmieszczą się w jednej linii */
+  justify-content: space-between; /* Rozłoży elementy na szerokości, aby wykorzystać dostępne miejsce */
+}
+
+.project {
+  width: calc(
+    33.33% - 20px
+  ); /* Szerokość każdego projektu, odejmujemy 20px na marginesy */
+  margin-bottom: 20px; /* Margines na dół, aby oddzielić projekty */
+  width: 200px;
+  height: 500px;
+}
+
+.project-images {
+  display: flex;
+}
+
+.project-images img {
+  width: 50%; /* Każde zdjęcie projektu zajmuje 25% szerokości kontenera */
+  margin-right: 5px; /* Margines między zdjęciami */
+}
+
+.project-description {
+  margin-top: 10px; /* Odstęp od zdjęć */
 }

@@ -1,6 +1,10 @@
 import "./App.css";
 import React, { useEffect } from "react";
 import profilepic from "./assets/profilepic.jpg";
+import cv from "./assets/cv.pdf";
+import github from "./assets/github.svg";
+import linkedin from "./assets/LinkedIn.svg";
+import linktree from "./assets/linktree.svg";
 import "animate.css";
 
 function App() {
@@ -59,22 +63,95 @@ function App() {
         </nav>
       </header>
 
-      <div className="interactive-text"></div>
+      <div id="o-mnie" className="interactive-text"></div>
 
       {showOtherSections && (
-        <div
-          id="o-mnie"
-          className="other-sections animate__animated animate__fadeInUp"
-        >
+        <div className="other-sections animate__animated animate__fadeInUp">
           <div className="about">
             <div class="img-hover-zoom">
               <img className="profilepic" src={profilepic} alt="portret" />
             </div>
             <div className="about-text">
               <p>
-                Cześć, jestem Szymon,<br></br>informatyką interesuję się już od
-                dobrych kilku lat.
+                Cześć, jestem Szymon,<br></br>informatyką interesuję się od
+                gimnazjum, które zakończyłem z tytułem laureata z konkursu
+                przedmiotowego z informatyki. Aktualnie jestem studentem
+                drugiego roku Informatyki na UAM w Poznaniu. Dodatkowo prowadzę
+                kursy programowania dla dzieci i młodzieży z kilku języków i
+                środowisk (głównie JS, HTML, CSS, C++, Python). Jestem osobą
+                otwartą i chętną do działania. Prywatnie miłośnik podróży,
+                koszykówki i Hackathonów. Swoją przyszłośc wiążę z Web
+                Developementem.
               </p>
+            </div>
+            <div className="about-cv">
+              <div className="cv-container">
+                <object
+                  data={cv}
+                  type="application/pdf"
+                  width="100%"
+                  height="100%"
+                >
+                  <p>
+                    Twoja przeglądarka nie obsługuje plików PDF. Możesz pobrać
+                    plik <a href={cv}>tutaj</a>.
+                  </p>
+                </object>
+                <button>
+                  <a href={cv} download="cv.pdf">
+                    Pobierz CV
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className="social-media">
+            <div className="social-media-item">
+              <a
+                href="https://github.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={github} alt="GitHub" class="icon" />
+              </a>
+            </div>
+            <div className="social-media-item">
+              <a
+                href="https://www.linkedin.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linkedin} alt="LinkedIn" class="icon" />
+              </a>
+            </div>
+            <div className="social-media-item">
+              <a
+                href="https://linktr.ee/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={linktree} alt="Linktree" class="icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
+      {showOtherSections && (
+        <div
+          className="other-sections2 wow animate__animated animate__slideInLeft"
+          data-wow-delat="2.5s"
+        >
+          <div className="projects">Moje Projekty</div>
+          <div className="projects-container">
+            <div className="project">
+              <div className="project-images">
+                {/* Zdjęcia projektu */}
+                <img src={github} alt="Zdjęcie projektu" />
+                <img src={github} alt="Zdjęcie projektu" />
+                <img src={github} alt="Zdjęcie projektu" />
+                <img src={github} alt="Zdjęcie projektu" />
+              </div>
+              <p className="project-description">Krótki opis projektu 1</p>
             </div>
           </div>
         </div>
