@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
+/* App.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.page-container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
+  background-color: #ebebeb;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 40px 20px 40px 20px;
+  height: 50px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-bottom: 1px solid #000000;
+  position: sticky;
+  margin-bottom: 85px;
 }
 
-.App-link {
-  color: #61dafb;
+.name-container span {
+  background-color: #ffffff;
+  margin-right: auto;
+  font-weight: bold;
+  color: #333333;
+  font-size: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-container {
+  margin-left: auto;
+  background-color: #ffffff;
+}
+
+.nav-container .nav-link {
+  text-decoration: none;
+  margin-right: 20px; /* odstęp między elementami nawigacji */
+  color: #333; /* kolor tekstu */
+  cursor: pointer; /* zmień kursor na wskaźnik */
+}
+
+.nav-container .nav-link:hover {
+  text-decoration: underline; /* podkreślenie po najechaniu myszką */
+}
+
+.interactive-text {
+  overflow: hidden; /* Ukryj tekst, który jeszcze nie został wyświetlony */
+  white-space: nowrap; /* Nie przerywaj tekstu */
+  margin-left: 70px; /* Wyśrodkowanie tekstu */
+  font-size: 36px; /* Rozmiar czcionki */
+  font-weight: bold; /* Pogrubienie tekstu */
+  margin-bottom: 100px;
+}
+.interactive-text::after {
+  color: orange;
+  content: "|"; /* Użyj pionowej kreski jako migającego kursora */
+  animation: cursor-blink 3s infinite; /* Animacja migania kursora */
+}
+.interactive-text.typing::after {
+  animation: none; /* Wyłącz animację migania kursora, gdy klasa typing jest obecna */
+}
+
+@keyframes cursor-blink {
+  0% {
+    opacity: 1; /* Kursor jest widoczny */
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 0; /* Kursor jest niewidoczny */
   }
+  100% {
+    opacity: 1; /* Kursor jest znowu widoczny */
+  }
+}
+
+.about {
+  display: flex;
+  align-items: center;
+}
+
+.profilepic {
+  margin: 0px 100px 0px 100px;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+
+  border-radius: 100%;
+}
+
+.profilepic:hover {
+  cursor: pointer;
+}
+
+.img-hover-zoom img {
+  transition: transform 2s, filter 1.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(70%);
+}
+
+.img-hover-zoom:hover img {
+  filter: brightness(100%);
+  transform: scale(1.5);
+}
+
+.about-text {
+  flex: 0 1 auto; /* Element nie będzie się rozciągał, ale będzie mógł zmieniać szerokość */
+  background-color: #ffffff;
+  border: 2px solid orange;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 18px;
+  align-items: center;
+  display: flex;
 }
