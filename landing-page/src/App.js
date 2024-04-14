@@ -108,7 +108,7 @@ function App() {
           <div className="social-media">
             <div className="social-media-item">
               <a
-                href="https://github.com/"
+                href="https://github.com/szymonjozwiakzip"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -117,7 +117,7 @@ function App() {
             </div>
             <div className="social-media-item">
               <a
-                href="https://www.linkedin.com/"
+                href="https://www.linkedin.com/in/szyjoz/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -126,7 +126,7 @@ function App() {
             </div>
             <div className="social-media-item">
               <a
-                href="https://linktr.ee/"
+                href="https://linktr.ee/szymon_jozwiak"
                 target="_blank"
                 rel="noopener noreferrer"
               >
